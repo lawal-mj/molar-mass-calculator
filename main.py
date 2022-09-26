@@ -8,9 +8,20 @@ def identify_numbers(word):
             numbers += item
         else:
             pass
-    
+    if numbers == "":
+        return 1
     return int(numbers)
 
+def remove_numbers(word):
+    letters = ''
+    for item in word:
+        if item not in '1234567890':
+            letters += item
+        else:
+            pass
+    return letters 
+
+remove_numbers("mujeeb12345")
 
 
 
@@ -23,4 +34,4 @@ while True:
         print()
         mass = 0
     else:
-        mass += periodic_table_values[element]
+        mass += identify_numbers(element) * periodic_table_values[remove_numbers(element)]
